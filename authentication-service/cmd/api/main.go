@@ -14,7 +14,7 @@ import (
 	_ "github.com/jackc/pgx/v4/stdlib"
 )
 
-const webPort = "8082"
+const webPort = "8081"
 
 var counts int64
 
@@ -47,6 +47,7 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
+	log.Printf("Starting authentication service on port %s", webPort)
 }
 
 func openDB(dsn string) (*sql.DB, error) {
